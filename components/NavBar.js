@@ -51,7 +51,7 @@ export default function NavBar({ tv, home }) {
           flex-col md:flex-row rounded-md ${isOpen ? "block" : "hidden"}`}
         >
           {Links.map((link) => (
-            <Link href={link.link}>
+            <Link href={link.link} key={link.link}>
               <div className="flex items-center mt-1">
                 <span className="mr-1 leading-none block md:inline-block w-[100%] hover:bg-[#f0fffbfe] text-slate-900 md:text-white hover:text-sky-700 text-left p-1">
                   {link.name}
@@ -74,7 +74,7 @@ export default function NavBar({ tv, home }) {
             <ul className="hidden group-hover:flex flex-col w-[300px] bg-slate-200 absolute top-[20px] right-0 rounded-sm px-3 py-4">
               {tv
                 ? DropItemsTV.map((item) => (
-                    <Link href={item.link}>
+                    <Link href={item.link} key={item.link}>
                       <li className="text-slate-900 hover:bg-slate-900 px-3 hover:text-slate-200">
                         {item.name}
                       </li>
