@@ -5,6 +5,7 @@ const About = () => {
   return (
     <>
       <NavBar home />
+
       <div className="bg-black min-h-screen flex items-center justify-center">
         <div className="bg-slate-300 p-8 rounded shadow-md max-w-md w-full">
           <h1 className="text-2xl font-semibold mb-4">About Us</h1>

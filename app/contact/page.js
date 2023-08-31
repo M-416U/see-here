@@ -30,7 +30,7 @@ const Contact = () => {
 
   return (
     <>
-    <NavBar home/>
+      <NavBar home />
       <div className="bg-black min-h-screen flex items-center justify-center">
         <div className="bg-slte-500 p-8 rounded shadow-md max-w-md w-full">
           <h1 className="text-2xl font-semibold mb-4">Contact Us</h1>
