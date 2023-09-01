@@ -1,9 +1,7 @@
 import MainContent from "@/components/MainContent";
 import { API_LINKS } from "@/components/API_LINKS";
 async function getData() {
-  const res = await fetch(API_LINKS.popular_API, {
-    next: { revalidate: 4500 },
-  });
+  const res = await fetch(API_LINKS.popular_API);
   return res.json();
 }
 

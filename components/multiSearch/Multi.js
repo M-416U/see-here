@@ -10,9 +10,7 @@ export default function Multi() {
   const api = `https://api.themoviedb.org/3/search/multi?query=${searchValue}&api_key=${API_KEY}`;
 
   useEffect(() => {
-    const res = fetch(api, {
-      next: { revalidate: 4500 },
-    })
+    const res = fetch(api)
       .then((res) => res.json())
       .then((data) => {
         setMovies(data.results);

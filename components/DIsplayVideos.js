@@ -10,10 +10,7 @@ export default function DIsplayVideos({ id, tv }) {
         const response = await fetch(
           `https://api.themoviedb.org/3/${
             tv ? "tv" : "movie"
-          }/${id}/videos?api_key=2439b9895317f11787da95e8bf9e8782`,
-          {
-            next: { revalidate: 4500 },
-          }
+          }/${id}/videos?api_key=2439b9895317f11787da95e8bf9e8782`
         );
         const jsonData = await response.json();
         setVideos(jsonData);
