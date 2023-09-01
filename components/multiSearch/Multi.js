@@ -11,7 +11,7 @@ export default function Multi() {
 
   useEffect(() => {
     const res = fetch(api, {
-      cache: "no-store",
+      next: { revalidate: 4500 },
     })
       .then((res) => res.json())
       .then((data) => {

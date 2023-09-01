@@ -1,7 +1,9 @@
 import { API_LINKS } from "@/components/API_LINKS";
 import MainContent from "@/components/MainContent";
 async function getData() {
-  const res = await fetch(API_LINKS.main_tv);
+  const res = await fetch(API_LINKS.main_tv, {
+    next: { revalidate: 4500 },
+  });
   return res.json();
 }
 export default async function Home() {

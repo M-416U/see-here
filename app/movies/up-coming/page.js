@@ -2,7 +2,7 @@ import MainContent from "@/components/MainContent";
 import { API_LINKS } from "@/components/API_LINKS";
 async function getData() {
   const res = await fetch(API_LINKS.up_coming, {
-    cache: "no-store",
+    next: { revalidate: 4500 },
   });
   return res.json();
 }

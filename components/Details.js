@@ -16,7 +16,10 @@ export default function Details({ params, tv }) {
         const response = await fetch(
           `https://api.themoviedb.org/3/${moviesid ? "movie" : "tv"}/${
             moviesid || tvshowid
-          }?api_key=${api_key}`
+          }?api_key=${api_key}`,
+          {
+            next: { revalidate: 4500 },
+          }
         );
         const jsonData = await response.json();
         setData(jsonData);
@@ -34,7 +37,10 @@ export default function Details({ params, tv }) {
         const response = await fetch(
           `https://api.themoviedb.org/3/${moviesid ? "movie" : "tv"}/${
             moviesid || tvshowid
-          }/recommendations?api_key=${api_key}`
+          }/recommendations?api_key=${api_key}`,
+          {
+            next: { revalidate: 4500 },
+          }
         );
         const jsonData = await response.json();
         setSimilarData(jsonData);
@@ -54,7 +60,7 @@ export default function Details({ params, tv }) {
             moviesid || tvshowid
           }/images?api_key=${api_key}`,
           {
-            cache: "no-store",
+            next: { revalidate: 4500 },
           }
         );
         const jsonData = await response.json();

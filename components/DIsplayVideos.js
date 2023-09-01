@@ -12,7 +12,7 @@ export default function DIsplayVideos({ id, tv }) {
             tv ? "tv" : "movie"
           }/${id}/videos?api_key=2439b9895317f11787da95e8bf9e8782`,
           {
-            cache: "no-store",
+            next: { revalidate: 4500 },
           }
         );
         const jsonData = await response.json();
