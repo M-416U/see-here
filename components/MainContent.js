@@ -6,7 +6,7 @@ import { img_path } from "./API_LINKS";
 
 export default function MainContent({ data, header, tv }) {
   if (!data || !data.results) {
-    return <div>Loading...</div>;
+    return <div className="py-10 block text-center text-3xl">Loading...</div>;
   } else {
     return (
       <main className="flex space-x-5 space-y-10 flex-wrap container mx-auto px-16 py-5">
