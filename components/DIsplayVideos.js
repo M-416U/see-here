@@ -28,15 +28,14 @@ export default function DIsplayVideos({ id, tv }) {
       <div className="flex overflow-x-auto space-x-4 justify-center">
         {videos.results
           ? videos.results.map((video) => (
-              <div className="flex flex-col space-y-1">
+              <div className="flex flex-col space-y-1" key={video.key}>
                 <iframe
                   width="200"
                   height="150"
                   src={`https://www.youtube.com/embed/${video.key}?si=Y53cZlZrLW8Wl6JV`}
                   title="YouTube video player"
-                  frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
+                  allowFullScreen
                 ></iframe>
                 <span>{video.name}</span>
               </div>

@@ -79,7 +79,7 @@ export default function Details({ params, tv }) {
           <Image
             className="rounded-lg"
             src={`${img_path}${data.poster_path}`}
-            alt={data.title}
+            alt={data.title || "image"}
             layout="fill"
           />
           <span className="relative p-2 bg-yellow-300 text-black top-2 left-3 rounded-md font-bold">
@@ -119,7 +119,7 @@ export default function Details({ params, tv }) {
                           <Image
                             className="rounded-lg"
                             src={`${img_path}${season.poster_path}`}
-                            alt={data.title}
+                            alt={data.title || "image"}
                             layout="fill"
                           />
                         ) : (
@@ -136,11 +136,13 @@ export default function Details({ params, tv }) {
               ))}
             </ul>
             <div className="py-3">
+              {/* //Description------------------------------- */}
               <h3 className="font-bold text-2xl">Description:</h3>
               <p className="text-slate-500 px-4 max-h-[250px] overflow-auto">
                 {data.overview}
               </p>
             </div>
+            {/* //watch btn------------------------------------------------- */}
             <div className="border border-slate-500 hover:border-slate-200 text-center inline-block px-3 md:px-0 md:w-1/2 mx-auto  rounded-md">
               <Link
                 href={movieHomePage ? movieHomePage : ""}
@@ -149,14 +151,15 @@ export default function Details({ params, tv }) {
                 Watch {data.title || data.name}
               </Link>
             </div>
+            {/* //companies------------------------------------------------- */}
             <div className="flex justify-center flex-wrap gap-4 items-center mt-5  overflow-auto">
               {companies.map((company) => (
-                <div className="items-center flex flex-col bg-slate-300 opacity-[0.9] w-[50px] h-[50px] md:w-[150px] md:h-[150px] justify-center md:rounded-full p-2">
+                <div className="items-center flex flex-col bg-slate-300 opacity-[0.9] w-[50px] h-[50px] justify-center md:rounded-full p-2">
                   {company.logo_path ? (
                     <div className="w-[50px] h-[50px] relative">
                       <Image
                         src={`${img_path}${company.logo_path}`}
-                        alt={company.name}
+                        alt={company.name || "image"}
                         layout="fill"
                       />
                     </div>
@@ -167,34 +170,38 @@ export default function Details({ params, tv }) {
               ))}
             </div>
           </div>
-          <div className="relative w-16 h-16 overflow-hidden bottom-0">
-            <Image
-              alt={data.title || data.name}
-              src={`${img_path}${data.backdrop_path}`}
-              layout="fill"
-            />
-          </div>
         </div>
       </div>
+      {/* //backdrops Images------------------------------------------------------- */}
       {Images.backdrops && (
         <div className=" w-[70%] h-[150px] mx-auto flex overflow-x-auto space-x-2 py-3">
           {Images.backdrops.map((img) => (
-            <div
-              className="relative min-w-[100px] h-[100%] "
+            <Link
+              href={`${img_path}${img.file_path}`}
+              className="relative min-w-[100px] h-[100%] group cursor-pointer"
               key={img.file_path}
             >
+              <div className="fixed z-[80] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] md:w-[400px] md:h-[400px] hidden group-hover:block rounded-lg overflow-hidden">
+                <Image
+                  alt={data.title || data.name || "image"}
+                  src={`${img_path}${img.file_path}`}
+                  layout="fill"
+                />
+              </div>
               <Image
-                alt={data.title || data.name}
+                alt={data.title || data.name || "image"}
                 src={`${img_path}${img.file_path}`}
                 layout="fill"
               />
-            </div>
+            </Link>
           ))}
         </div>
       )}
-      <div className="container px-5 mx-auto">
+      {/* //display videos of current data------------------------------------------ */}
+      <div className="container px-14 mx-auto">
         <DIsplayVideos id={moviesid ? moviesid : tvshowid} />
       </div>
+      {/* //show the recommendations------------------------------------------------ */}
       {<MainContent data={similarData} header={"You Will Love"} tv={tv} />}
     </>
   );
