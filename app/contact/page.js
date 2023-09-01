@@ -24,7 +24,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/send-email", formData);
+      await axios.post("api/send-email", formData);
       setMsg("Email sent successfully");
       setFormData({
         name: "",

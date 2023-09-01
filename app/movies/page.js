@@ -2,7 +2,7 @@ import { API_LINKS } from "@/components/API_LINKS";
 import MainContent from "@/components/MainContent";
 async function getData() {
   const res = await fetch(API_LINKS.main_movies, {
-    next: { revalidate: 4500 },
+    cache: "no-store",
   });
   return res.json();
 }
