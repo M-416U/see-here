@@ -75,7 +75,7 @@ export default function Details({ params, tv }) {
   return (
     <>
       <div className="container px-2 md:items-start items-center md:px-16 flex flex-col md:flex-row space-x-0 md:space-x-3 w-[70%] mx-auto relative py-[50px] bg-slate-900 rounded-md">
-        <h2 className="absolute left-1/2 text-center top-[-10px] translate-x-[-50%]">
+        <h2 className="absolute left-1/2 text-center top-[-10px] translate-x-[-50%] text-[10px] lg:text-2xl w-[100%]">
           {data.tagline}
         </h2>
         <div className="w-[90%] h-[330px] md:min-w-[234px] relative md:h-[500px] pb-0 md:pb-5">

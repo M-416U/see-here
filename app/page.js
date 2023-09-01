@@ -15,7 +15,7 @@ export default async function Home() {
       <div className=" flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-5 justify-center items-center py-24">
         <Link href={"/movies"} className={style}>
           <div>
-            <MdMovie className="text-8xl ml-7" />
+            <MdMovie className="text-8xl md:ml-7" />
             <h1 className="text-7xl hidden md:block">Movie</h1>
           </div>
         </Link>

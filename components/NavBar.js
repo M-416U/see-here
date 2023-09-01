@@ -48,6 +48,8 @@ export default function NavBar({ tv, home }) {
           py-2 md:py-0
           space-x-2
           md:justify-center
+          right-[10%]
+          md:right-0
           flex-col md:flex-row rounded-md ${isOpen ? "block" : "hidden"}`}
         >
           {Links.map((link) => (

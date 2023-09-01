@@ -33,8 +33,8 @@ export default function DIsplayVideos({ id, tv }) {
           ? videos.results.map((video) => (
               <div className="flex flex-col space-y-1">
                 <iframe
-                  width="300"
-                  height="200"
+                  width="200"
+                  height="150"
                   src={`https://www.youtube.com/embed/${video.key}?si=Y53cZlZrLW8Wl6JV`}
                   title="YouTube video player"
                   frameborder="0"

@@ -23,8 +23,8 @@ export default function MovieCard(props) {
         </div>
         <Link href={`/tv/${props.movieID}`}>
           <button
-            className="border rounded-xl md:px-10 py-2  px-3 border-none md:tracking-[5px]
-           bg-blue-500 w-[150px] md:w-[350px] mx-auto font-bold md:text-2xl hover:bg-blue-900 ease-in duration-300"
+            className="border rounded-xl lg:px-10 py-2  px-3 border-none lg:tracking-[5px]
+           bg-blue-500 w-[150px] lg:w-[350px] mx-auto font-bold lg:text-2xl hover:bg-blue-900 ease-in duration-300"
           >
             More Details
           </button>
