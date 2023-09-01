@@ -37,7 +37,7 @@ router.post("/send-email", async (req, res) => {
     res.status(200).send("Email sent successfully");
   } catch (error) {
     console.error("Error sending email:", error);
-    res.status(500).send("Contact With Email Does`t Work For Mow Sorry");
+    res.status(500).send("Error sending email:");
   }
 });
 

@@ -32,7 +32,7 @@ const Contact = () => {
         message: "",
       });
     } catch (error) {
-      setMsg("Error sending email:", error);
+      setMsg("Contact With Email Does`t Work For Mow Sorry");
     }
   };
 
