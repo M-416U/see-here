@@ -1,6 +1,9 @@
+"use client";
 import { MoviesDesc, TVDesc } from "@/components/TVDesc";
 import "./globals.css";
 import { Ubuntu_Mono } from "next/font/google";
+import { useEffect } from "react";
+import { initGA, logPageView } from "./google-analytics";
 const ubuntu = Ubuntu_Mono({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
@@ -12,6 +15,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  useEffect(() => {
+    initGA();
+    logPageView();
+  }, []);
   return (
     <html lang="en">
       <script
@@ -19,15 +26,6 @@ export default function RootLayout({ children }) {
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9570051132890232"
         crossorigin="anonymous"
       ></script>
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-DLMRSMKD1N"
-      ></script>
-      <script>
-        window.dataLayer = window.dataLayer || []; function gtag()
-        {dataLayer.push(arguments)}
-        gtag('js', new Date()); gtag('config', 'G-DLMRSMKD1N');
-      </script>
       <body className={ubuntu.className}>{children}</body>
     </html>
   );
