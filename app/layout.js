@@ -19,7 +19,18 @@ export default function RootLayout({ children }) {
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9570051132890232"
         crossorigin="anonymous"
       ></script>
-      <body className={ubuntu.className}>{children}</body>
+      <body className={ubuntu.className}>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-DLMRSMKD1N"
+        ></script>
+        <script>
+          window.dataLayer = window.dataLayer || []; function gtag()
+          {dataLayer.push(arguments)}
+          gtag('js', new Date()); gtag('config', 'G-DLMRSMKD1N');
+        </script>
+        {children}
+      </body>
     </html>
   );
 }
