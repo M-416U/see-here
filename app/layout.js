@@ -1,18 +1,9 @@
 "use client";
-import { MoviesDesc, TVDesc } from "@/components/TVDesc";
 import "./globals.css";
 import { Ubuntu_Mono } from "next/font/google";
 import { useEffect } from "react";
 import { initGA, logPageView } from "./google-analytics";
 const ubuntu = Ubuntu_Mono({ subsets: ["latin"], weight: "400" });
-
-export const metadata = {
-  title: "See ... Here",
-  description: TVDesc + MoviesDesc,
-  icons: {
-    icon: "/Logo.png",
-  },
-};
 
 export default function RootLayout({ children }) {
   useEffect(() => {
