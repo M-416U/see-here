@@ -15,11 +15,14 @@ export default function MainContent({ data, header, tv }) {
         </h1>
         <div className="flex space-y-10 flex-wrap container mx-auto gap-3">
           {data.results.map((movie) => (
-            <div className="flex flex-col-reverse w-[90%] md:w-[18%] hover:shadow-none transition-all delay-300 ease-in-out cursor-pointer space-y-2 group ">
+            <div
+              key={movie.id}
+              className="flex flex-col-reverse w-[90%] md:w-[30%] lg:w-[18%] hover:shadow-none transition-all delay-300 ease-in-out cursor-pointer space-y-2 group "
+            >
               <h2 className="h-[20px]">{tv ? movie.name : movie.title}</h2>
               <div className=" relative transition-all delay-300 ease-in-out">
                 <div className="z-10 hidden absolute h-[100%] w-[100%] group-hover:flex bg-slate-500 opacity-50"></div>
-                <h2 className="z-10 hidden group-hover:block absolute top-2 h-[210px] text-ellipsis overflow-hidden px-2">
+                <h2 className="z-10 hidden lg:group-hover:block absolute top-2 h-[210px] text-ellipsis overflow-hidden px-2">
                   {movie.overview}
                 </h2>
                 <Link href={`/${tv ? "tv" : "movies"}/${movie.id}`}>

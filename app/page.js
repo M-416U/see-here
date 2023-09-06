@@ -5,7 +5,7 @@ import Link from "next/link";
 import { MdMovie } from "react-icons/md";
 import { PiTelevisionBold } from "react-icons/pi";
 const style =
-  "flex flex-col space-y-8 justify-center items-center shadow-[0px_1px_20px_2px_white] w-[80%] md:w-[40%] h-0 md:ml-0 py-36 hover:shadow-[inset_0px_1px_20px_2px_white] cursor-pointer rounded-lg";
+  "flex flex-col space-y-8 justify-center items-center card-box-shadow w-[80%] md:w-[40%] h-0 md:ml-0 py-36 cursor-pointer rounded-lg";
 
 export const metadata = {
   title: "See ... Here",

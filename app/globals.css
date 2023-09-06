@@ -25,17 +25,35 @@
   background: #555;
 }
 
-body {
-  background-color: black;
-}
-
 * {
   margin: 0;
   padding: 0;
-  color: azure;
 }
 
 a {
   text-decoration: none;
-  color: white;
+}
+
+html[data-theme='dark'] .text-white {
+  color: black
+}
+
+html[data-theme='light'] .bg-slate-900 {
+  background-color: #d3cbcb;
+}
+
+html[data-theme='light'] .card-box-shadow {
+  box-shadow: 0px 1px 20px 2px black;
+}
+
+html[data-theme='light'] .card-box-shadow:hover {
+  box-shadow: inset 0px 1px 20px 2px black;
+}
+
+html[data-theme='dark'] .card-box-shadow {
+  box-shadow: 0px 1px 20px 2px white;
+}
+
+html[data-theme='dark'] .card-box-shadow:hover {
+  box-shadow: inset 0px 1px 20px 2px white;
 }

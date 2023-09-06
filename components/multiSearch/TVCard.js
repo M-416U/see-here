@@ -5,7 +5,7 @@ import { img_path } from "../API_LINKS";
 export default function MovieCard(props) {
   return (
     <div className="flex space-x-2 md:space-x-4 space-y-0 md:space-y-3 bg-slate-600 mt-0 md:mt-6 rounded">
-      <div className="md:w-[30%] max-w-[150px] min-w-[149px] rounded-lg h-[150px] md:h-[300px] md:max-w-[300px] relative overflow-hidden">
+      <div className="md:w-[30%] max-w-[90px] min-w-[89px] rounded-lg h-[150px] md:h-[300px] md:max-w-[300px] relative overflow-hidden">
         <h3 className="bg-white text-center h-[100%] text-xl md:text-7xl text-blue-950">
           No Image Here
         </h3>

@@ -25,7 +25,7 @@ export default function DIsplayVideos({ id, tv }) {
       <h2 className="font-bold text-3xl flex items-center space-x-4 border border-t-transparent border-l-transparent border-r-transparent border-b-2 border-slate-500 px-3 py-5">
         Trailers:
       </h2>
-      <div className="flex overflow-x-auto space-x-4 justify-center">
+      <div className="flex overflow-x-auto space-x-4 justify-start">
         {videos.results
           ? videos.results.map((video) => (
               <div className="flex flex-col space-y-1" key={video.key}>

@@ -2,11 +2,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import { images } from "@/app/Images/Images";
+import Images from "@/app/Images/Images";
 import { AiFillGithub } from "react-icons/ai";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
-export default function NavBar({ tv, home }) {
+import DarkModeButton from "./Button";
+import Logo from "@/app/Images/Images";
+export default function NavBar({ tv, home, params }) {
   const [isOpen, setIsopen] = useState(false);
   const Links = [
     { link: "/movies", name: "Movies", icon: "" },
@@ -35,13 +37,9 @@ export default function NavBar({ tv, home }) {
   return (
     <div>
       <nav className="flex container items-center px-16  justify-between pt-3 z-50 relative">
-        <Link href="/" className="w-[5rem] h-12 relative">
-          <Image
-            src={images.logo}
-            layout="fill"
-            alt="logo"
-            className="relative"
-          ></Image>
+        <DarkModeButton />
+        <Link href="/" className="relative">
+          <Logo />
         </Link>
         <div
           className={`z-50 md:flex align-middle w-4/5 px-3 md:px-0 space-y-0 md:space-y-0 absolute md:relative bg-[#f0fffbc9] md:bg-transparent top-20 md:top-0 
@@ -53,9 +51,13 @@ export default function NavBar({ tv, home }) {
           flex-col md:flex-row rounded-md ${isOpen ? "block" : "hidden"}`}
         >
           {Links.map((link) => (
-            <Link href={link.link} key={link.link}>
+            <Link
+              href={link.link}
+              key={link.link}
+              className="hover:border-white"
+            >
               <div className="flex items-center mt-1">
-                <span className="mr-1 leading-none block md:inline-block w-[100%] hover:bg-[#f0fffbfe] text-slate-900 md:text-white hover:text-sky-700 text-left p-1">
+                <span className="mr-1 leading-none block md:inline-block w-[100%] text-left p-1">
                   {link.name}
                 </span>
                 {link.icon}
@@ -73,7 +75,7 @@ export default function NavBar({ tv, home }) {
 
               <MdOutlineKeyboardArrowDown />
             </span>
-            <ul className="hidden group-hover:flex flex-col w-[300px] bg-slate-200 absolute top-[20px] right-0 rounded-sm px-3 py-4">
+            <ul className="hidden group-hover:flex flex-col w-60 md:w-[300px] bg-slate-200 absolute top-[20px] -right-10 md:-right-2 rounded-sm px-3 py-4">
               {tv
                 ? DropItemsTV.map((item) => (
                     <Link href={item.link} key={item.link}>
